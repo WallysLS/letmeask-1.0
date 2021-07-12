@@ -1,12 +1,9 @@
-import { useState } from "react";
+import {ButtonHTMLAttributes} from "react"
 
-export function Button(){
-    const [multiplier, setMultiplier] = useState(1);
+import "../styles/button.scss"
 
-    function increment(){
-        setMultiplier(multiplier * 5)
-    }
-    return( 
-    <button onClick={increment}>This is a multiplier {multiplier}</button>
-    )
-};
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
+
+export function Button(props: ButtonProps) {
+    return <button className="button" {...props} />;
+}
